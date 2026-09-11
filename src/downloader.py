@@ -47,8 +47,20 @@ class YouTubeDownloader:
         """Generate yt-dlp options based on format and quality"""
         base_opts = {
             'outtmpl': str(self.output_dir / '%(title)s.%(ext)s'),
-            'ignoreerrors': True,
-            'no_warnings': False,
+            'ignoreerrors': False,
+            'no_warnings': True,
+            'extractor_args': {
+                'youtube': {
+                    'player_client': ['android', 'ios'],
+                    'player_skip': ['webpage', 'configs'],
+                }
+            },
+            'http_headers': {
+                'User-Agent': 'com.google.android.youtube/19.29.37 (Linux; U; Android 14; Pixel 8 Pro) gzip',
+            },
+            'js_runtimes': {
+                'node': {}
+            }
         }
         
         if format_type == 'audio':
@@ -82,7 +94,10 @@ class YouTubeDownloader:
             ydl_opts = self.get_ydl_opts(format_type, quality, output_format)
             
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                ydl.download([url])
+                ret_code = ydl.download([url])
+                if ret_code != 0:
+                    print(f"{Fore.RED}✗ Download failed with exit code: {ret_code}")
+                    return False
             
             print(f"{Fore.GREEN}✓ Successfully downloaded!")
             return True
@@ -107,12 +122,18 @@ class YouTubeDownloader:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 # Get playlist info first
                 playlist_info = ydl.extract_info(playlist_url, download=False)
-                total_videos = len(playlist_info.get('entries', []))
+                if not playlist_info:
+                    print(f"{Fore.RED}✗ Error: Could not fetch playlist info")
+                    return {"success": False, "error": "Could not fetch playlist info"}
                 
+                total_videos = len(playlist_info.get('entries', []))
                 print(f"{Fore.YELLOW}Found {total_videos} videos in playlist")
                 
                 # Download playlist
-                ydl.download([playlist_url])
+                ret_code = ydl.download([playlist_url])
+                if ret_code != 0:
+                    print(f"{Fore.RED}✗ Playlist download failed with exit code: {ret_code}")
+                    return {"success": False, "error": f"Exit code {ret_code}"}
             
             print(f"{Fore.GREEN}✓ Playlist download completed!")
             return {"success": True, "total": total_videos}
@@ -146,9 +167,12 @@ class YouTubeDownloader:
     def get_video_info(self, url: str) -> Optional[Dict]:
         """Get video information without downloading"""
         try:
-            ydl_opts = {'quiet': True}
+            ydl_opts = self.get_ydl_opts('video', 'best', 'mp4')
+            ydl_opts.update({'quiet': True})
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(url, download=False)
+                if not info:
+                    return None
                 return {
                     'title': info.get('title', 'Unknown'),
                     'duration': info.get('duration', 0),

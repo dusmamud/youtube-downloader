@@ -1,3 +1,0 @@
-# Test URLs for bulk download
-https://www.youtube.com/watch?v=dQw4w9WgXcQ
-https://www.youtube.com/watch?v=L_jWHffIx5E
