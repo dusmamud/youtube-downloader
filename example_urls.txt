@@ -3,9 +3,9 @@
 # Add one YouTube URL per line
 
 # Example single video
-# https://www.youtube.com/watch?v=dQw4w9WgXcQ
+# https://www.youtube.com/watch?v=YOUR_OWN_VIDEO_ID
 
 # Example playlist
-# https://www.youtube.com/playlist?list=PLrAXtmRdnEQy6nuLMt9JiYIk3HBzjKoQ5
+# https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID
 
 # Add your URLs below:

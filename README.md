@@ -3,8 +3,13 @@
 [![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub release](https://img.shields.io/badge/release-v1.0.0-green.svg)](https://github.com/dusmamud/youtube-downloader/releases)
+[![Notice: Personal Archival](https://img.shields.io/badge/Notice-Personal%20Archival%20Only-orange.svg)](DISCLAIMER.md)
 
-A comprehensive, professional-grade YouTube video and audio downloader with support for single videos, playlists, bulk downloads, and multiple formats/resolutions.
+A comprehensive, professional-grade media backup and archival utility for creators with support for single videos, playlists, bulk downloads, and multiple formats/resolutions.
+
+> [!IMPORTANT]
+> **LEGAL NOTICE & FAIR USE ARCHIVAL POLICY:**
+> This tool is strictly intended for **personal backup and archival of your own original content** or media licensed under permissive **Creative Commons / Public Domain** licenses. Downloading copyrighted media without express authorization from the rights holder is prohibited. This software does **not** bypass or decrypt DRM (Digital Rights Management) protections. Please review [**DISCLAIMER.md**](DISCLAIMER.md) before use.
 
 ## ✨ Features
 
@@ -28,8 +33,8 @@ cd youtube-downloader
 # Install dependencies
 pip install -r requirements.txt
 
-# Download a video
-python youtube_downloader.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+# Download your video backup
+python youtube_downloader.py "https://www.youtube.com/watch?v=YOUR_OWN_VIDEO_ID"
 ```
 
 ## 📦 Installation
@@ -148,15 +153,15 @@ youtube-downloader/
 Create a text file with URLs (one per line):
 
 ```txt
-# Music playlist
-https://www.youtube.com/watch?v=dQw4w9WgXcQ
-https://www.youtube.com/watch?v=L_jWHffIx5E
+# Your own playlist
+https://www.youtube.com/watch?v=YOUR_OWN_VIDEO_ID_1
+https://www.youtube.com/watch?v=YOUR_OWN_VIDEO_ID_2
 
-# Educational content
-https://www.youtube.com/playlist?list=PLrAXtmRdnEQy6nuLMt9JiYIk3HBzjKoQ5
+# Creative Commons / Public Domain educational playlist
+https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID
 
-# Single videos
-https://www.youtube.com/watch?v=9bZkp7q19f0
+# Single video backup
+https://www.youtube.com/watch?v=YOUR_OWN_VIDEO_ID_3
 ```
 
 ## 📂 Output Structure
@@ -233,13 +238,15 @@ For detailed troubleshooting, see [Troubleshooting Guide](docs/TROUBLESHOOTING.m
 - **[colorama](https://github.com/tartley/colorama)** - Cross-platform colored output
 - **[FFmpeg](https://ffmpeg.org/)** - Audio/video processing (external)
 
-## ⚖️ Legal Notice
+## ⚖️ Legal Notice & Terms of Use
 
-This tool is for **educational and personal use only**. Please respect:
-- YouTube's Terms of Service
-- Copyright laws and content creators' rights
-- Only download content you have permission to download
-- Content available under appropriate licenses
+This software is developed strictly for **educational and personal media backup purposes**. Users must adhere to the following terms:
+- **Own Content Archival**: Exclusively intended for creators to download and archive their own uploaded media or content explicitly licensed under Creative Commons / Public Domain.
+- **Respect Copyright**: Do not download or distribute copyrighted material without explicit permission from the rights holder.
+- **No DRM Circumvention**: This software does **NOT** circumvent, decrypt, or tamper with DRM technologies (Widevine, FairPlay).
+- **YouTube Terms of Service**: Users are solely responsible for complying with YouTube's Terms of Service and applicable local copyright laws.
+
+For complete terms, liability limitations, and policy details, see [**DISCLAIMER.md**](DISCLAIMER.md).
 
 ## 📄 License
 

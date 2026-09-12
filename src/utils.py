@@ -20,10 +20,11 @@ def print_banner():
     """Print application banner"""
     print(f"{Fore.CYAN}")
     print("=" * 60)
-    print("    🎥 YouTube Video/Audio Downloader v1.0.0")
-    print("    📁 Supports: Single, Playlist, Bulk Downloads")
+    print("    🎥 YouTube Video/Audio Archival Utility v1.0.0")
+    print("    📁 Personal Backup & Creative Commons Media")
     print("    🎵 Formats: MP4, MP3, M4A | Quality: 144p-4K")
     print("=" * 60)
+    print(f"{Fore.YELLOW}    ⚖️  Notice: For personal archival of your own content only.")
     print()
 
 def validate_url(url: str) -> bool:
