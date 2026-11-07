@@ -272,3 +272,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Made with ❤️ for the YouTube downloading community
 </div>
 Tip: run `python youtube_downloader.py` with no arguments to enter interactive mode instead of remembering any flags.
+Tip: for audio-only downloads, `-q 192k` is the recommended balance — high quality without the larger file size of `320k`.
