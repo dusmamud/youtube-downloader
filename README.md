@@ -274,3 +274,4 @@ Made with ❤️ for the YouTube downloading community
 Tip: run `python youtube_downloader.py` with no arguments to enter interactive mode instead of remembering any flags.
 Tip: for audio-only downloads, `-q 192k` is the recommended balance — high quality without the larger file size of `320k`.
 Playlist downloads are saved numbered in order (`01 - First Video.mp4`, `02 - Second Video.mp4`, …) inside a `playlist_downloads/` folder.
+Use `-d` to send downloads to a custom folder instead of the default `downloads/` folder shown in the output structure.
