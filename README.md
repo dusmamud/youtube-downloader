@@ -271,3 +271,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <div align="center">
 Made with ❤️ for the YouTube downloading community
 </div>
+Tip: run `python youtube_downloader.py` with no arguments to enter interactive mode instead of remembering any flags.
