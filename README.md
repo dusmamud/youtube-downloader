@@ -276,3 +276,4 @@ Tip: for audio-only downloads, `-q 192k` is the recommended balance — high qua
 Playlist downloads are saved numbered in order (`01 - First Video.mp4`, `02 - Second Video.mp4`, …) inside a `playlist_downloads/` folder.
 Use `-d` to send downloads to a custom folder instead of the default `downloads/` folder shown in the output structure.
 If you see a `yt-dlp not found` error, fix it with `pip install --upgrade yt-dlp` before re-running the download.
+Tip: use `-i` to inspect a video's details first — it shows video information without downloading anything.
